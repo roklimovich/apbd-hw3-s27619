@@ -88,7 +88,11 @@ public sealed class LinqExercises
     /// </summary>
     public IEnumerable<string> Task05_IsThereAnyInactiveEnrollment()
     {
-        throw NotImplemented(nameof(Task05_IsThereAnyInactiveEnrollment));
+        bool hasInactiveEnrollment = UniversityData.Enrollments
+            .Any(e => !e.IsActive);
+        
+        return [$"Is there any inactive enrollment? {hasInactiveEnrollment}"];
+    
     }
 
     /// <summary>
