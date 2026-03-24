@@ -107,7 +107,9 @@ public sealed class LinqExercises
     /// </summary>
     public IEnumerable<string> Task06_DoAllLecturersHaveDepartment()
     {
-        throw NotImplemented(nameof(Task06_DoAllLecturersHaveDepartment));
+        bool allHaveDepartment = UniversityData.Lecturers
+            .All(l => !string.IsNullOrWhiteSpace(l.Department));
+        return [$"Do all lecturers have a department? {allHaveDepartment}"];
     }
 
     /// <summary>
