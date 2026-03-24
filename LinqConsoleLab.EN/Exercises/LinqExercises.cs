@@ -123,7 +123,9 @@ public sealed class LinqExercises
     /// </summary>
     public IEnumerable<string> Task07_CountActiveEnrollments()
     {
-        throw NotImplemented(nameof(Task07_CountActiveEnrollments));
+        int count = UniversityData.Enrollments
+            .Count(e => e.IsActive);
+        return [$"Active enrollments: {count}"];
     }
 
     /// <summary>
