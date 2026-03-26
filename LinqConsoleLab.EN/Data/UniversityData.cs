@@ -80,7 +80,7 @@ public static class UniversityData
         yield return $"Lecturers: {Lecturers.Count}";
         yield return $"Courses: {Courses.Count}";
         yield return $"Enrollments: {Enrollments.Count}";
-        yield return string.Empty;
+        yield return $"Any inactive enrollment: {(Enrollments.Any(e => !e.IsActive) ? "Yes" : "No")}";;
         yield return "Sample students:";
 
         foreach (var student in Students.Take(3))
