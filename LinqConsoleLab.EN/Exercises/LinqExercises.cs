@@ -176,7 +176,14 @@ public sealed class LinqExercises
     /// </summary>
     public IEnumerable<string> Task10_SecondPageOfCourses()
     {
-        throw NotImplemented(nameof(Task10_SecondPageOfCourses));
+        const int pageSize = 2;
+        const int pageNumber = 2;
+
+        return UniversityData.Courses
+            .OrderBy(c => c.Title)
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .Select(c => $"{c.Title} | {c.Category}");  
     }
 
     /// <summary>
